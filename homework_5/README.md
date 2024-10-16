@@ -1,7 +1,7 @@
-**Baisholanov Alibek
+##Baisholanov Alibek
 
-*Download the folder xylophone and open in Xcode
+###Download the folder xylophone and open in Xcode
 
-*Implemented:
+###Implemented:
 All the requirements
 +Animations when the button is clicked
