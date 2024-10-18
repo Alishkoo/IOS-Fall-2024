@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var progressBar: UIProgressView!
     
+    @IBOutlet weak var timerLabel: UILabel!
+    
     let eggTimes : [String : Int] = ["Soft" : 5, "Medium" : 420, "Hard" : 720]
     
     var player: AVAudioPlayer!
@@ -41,18 +43,14 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func resetButton(_ sender: UIButton) {
-        timer.invalidate()
-        titleLabel.text = "What type of egg do you want?"
-        progressBar.progress = 0
-    }
-    
     
     @objc func updateCounter(){
         if secondsPassed < totalTime {
             secondsPassed += 1
             let percentageProgress = secondsPassed / totalTime
+            var remainingSeconds = Int(totalTime - secondsPassed)
             
+            timerLabel.text = formatTime(remainingSeconds)
             progressBar.progress = percentageProgress
         }else{
             playAlarm()
@@ -68,5 +66,10 @@ class ViewController: UIViewController {
         player.play()
     }
     
+    func formatTime(_ seconds: Int) -> String{
+        let minutes = seconds / 60
+        let remainingSeconds = seconds % 60
+        return String(format: "%02d:%02d", minutes, remainingSeconds)
+    }
 }
 
