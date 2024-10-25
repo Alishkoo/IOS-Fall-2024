@@ -10,6 +10,7 @@ import AVFoundation
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var typeOfEgg: UILabel!
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -36,6 +37,7 @@ class ViewController: UIViewController {
         progressBar.progress = 0.0
         secondsPassed = 0
         titleLabel.text = eggType
+        
         
         totalTime = Float(eggTimes[eggType]!)
         
