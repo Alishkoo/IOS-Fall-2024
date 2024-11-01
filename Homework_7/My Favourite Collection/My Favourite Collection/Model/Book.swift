@@ -12,4 +12,5 @@ struct Book{
     var title: String
     var author: String
     var genre: String
+    var favourite: Bool
 }

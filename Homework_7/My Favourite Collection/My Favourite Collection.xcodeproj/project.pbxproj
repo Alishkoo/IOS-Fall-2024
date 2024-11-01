@@ -15,6 +15,7 @@
 		120B312C2CC8050900505688 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B312B2CC8050900505688 /* Book.swift */; };
 		120B312F2CC8094800505688 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B312E2CC8094800505688 /* UIView+Ext.swift */; };
 		120B31312CC8107900505688 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B31302CC8107900505688 /* BookCell.swift */; };
+		125FB9A52CD4A16C00F235AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125FB9A42CD4A16C00F235AB /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		120B312B2CC8050900505688 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		120B312E2CC8094800505688 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		120B31302CC8107900505688 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		125FB9A42CD4A16C00F235AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				120B312A2CC804FB00505688 /* Model */,
 				120B31262CC804DE00505688 /* BookListVC.swift */,
 				120B31302CC8107900505688 /* BookCell.swift */,
+				125FB9A42CD4A16C00F235AB /* ViewController.swift */,
 				120B311B2CC8014500505688 /* Assets.xcassets */,
 				120B311D2CC8014500505688 /* LaunchScreen.storyboard */,
 				120B31202CC8014500505688 /* Info.plist */,
@@ -163,6 +166,7 @@
 				120B31152CC8014400505688 /* SceneDelegate.swift in Sources */,
 				120B312F2CC8094800505688 /* UIView+Ext.swift in Sources */,
 				120B31312CC8107900505688 /* BookCell.swift in Sources */,
+				125FB9A52CD4A16C00F235AB /* ViewController.swift in Sources */,
 				120B312C2CC8050900505688 /* Book.swift in Sources */,
 				120B31272CC804DE00505688 /* BookListVC.swift in Sources */,
 			);
