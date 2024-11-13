@@ -16,6 +16,15 @@
 		124D631F2CE25715002046DF /* FilmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124D631E2CE25715002046DF /* FilmsViewController.swift */; };
 		124D63222CE25C5B002046DF /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124D63212CE25C5B002046DF /* Book.swift */; };
 		124D63262CE25D41002046DF /* BooksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124D63252CE25D41002046DF /* BooksCell.swift */; };
+		127C3F552CE315BF00BBB521 /* DetailBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3F542CE315BF00BBB521 /* DetailBookVC.swift */; };
+		127C3F572CE31AEB00BBB521 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3F562CE31AEB00BBB521 /* Film.swift */; };
+		127C3F592CE31AF700BBB521 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3F582CE31AF700BBB521 /* Music.swift */; };
+		127C3F5B2CE3650300BBB521 /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C3F5A2CE3650300BBB521 /* FilmCell.swift */; };
+		12ADA2BB2CE4EAD9003696E6 /* DetailFilmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADA2BA2CE4EAD9003696E6 /* DetailFilmVC.swift */; };
+		12ADA2BD2CE4ECD7003696E6 /* MusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADA2BC2CE4ECD7003696E6 /* MusicCell.swift */; };
+		12ADA2BF2CE4F851003696E6 /* DetailMusicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADA2BE2CE4F851003696E6 /* DetailMusicVC.swift */; };
+		12ADA2C22CE4F8BC003696E6 /* Sweater Weather.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 12ADA2C12CE4F8BC003696E6 /* Sweater Weather.mp3 */; };
+		12ADA2C42CE4F8CB003696E6 /* Chihiro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 12ADA2C32CE4F8CB003696E6 /* Chihiro.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +39,15 @@
 		124D631E2CE25715002046DF /* FilmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsViewController.swift; sourceTree = "<group>"; };
 		124D63212CE25C5B002046DF /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		124D63252CE25D41002046DF /* BooksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCell.swift; sourceTree = "<group>"; };
+		127C3F542CE315BF00BBB521 /* DetailBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookVC.swift; sourceTree = "<group>"; };
+		127C3F562CE31AEB00BBB521 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		127C3F582CE31AF700BBB521 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		127C3F5A2CE3650300BBB521 /* FilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
+		12ADA2BA2CE4EAD9003696E6 /* DetailFilmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFilmVC.swift; sourceTree = "<group>"; };
+		12ADA2BC2CE4ECD7003696E6 /* MusicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCell.swift; sourceTree = "<group>"; };
+		12ADA2BE2CE4F851003696E6 /* DetailMusicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMusicVC.swift; sourceTree = "<group>"; };
+		12ADA2C12CE4F8BC003696E6 /* Sweater Weather.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sweater Weather.mp3"; sourceTree = "<group>"; };
+		12ADA2C32CE4F8CB003696E6 /* Chihiro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Chihiro.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +84,7 @@
 				124D63042CE2517B002046DF /* SceneDelegate.swift */,
 				124D630B2CE2517C002046DF /* Assets.xcassets */,
 				124D63102CE2517C002046DF /* Info.plist */,
+				12ADA2C02CE4F895003696E6 /* Sounds */,
 				124D63242CE25D0F002046DF /* TableCells */,
 				124D63202CE25C42002046DF /* Models */,
 				124D63192CE25585002046DF /* Controllers */,
@@ -80,6 +99,9 @@
 				124D631A2CE256E3002046DF /* BooksViewController.swift */,
 				124D631C2CE25704002046DF /* MusicViewController.swift */,
 				124D631E2CE25715002046DF /* FilmsViewController.swift */,
+				127C3F542CE315BF00BBB521 /* DetailBookVC.swift */,
+				12ADA2BA2CE4EAD9003696E6 /* DetailFilmVC.swift */,
+				12ADA2BE2CE4F851003696E6 /* DetailMusicVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -87,6 +109,8 @@
 		124D63202CE25C42002046DF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				127C3F562CE31AEB00BBB521 /* Film.swift */,
+				127C3F582CE31AF700BBB521 /* Music.swift */,
 				124D63212CE25C5B002046DF /* Book.swift */,
 			);
 			path = Models;
@@ -96,8 +120,19 @@
 			isa = PBXGroup;
 			children = (
 				124D63252CE25D41002046DF /* BooksCell.swift */,
+				12ADA2BC2CE4ECD7003696E6 /* MusicCell.swift */,
+				127C3F5A2CE3650300BBB521 /* FilmCell.swift */,
 			);
 			path = TableCells;
+			sourceTree = "<group>";
+		};
+		12ADA2C02CE4F895003696E6 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				12ADA2C32CE4F8CB003696E6 /* Chihiro.mp3 */,
+				12ADA2C12CE4F8BC003696E6 /* Sweater Weather.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +194,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				124D630C2CE2517C002046DF /* Assets.xcassets in Resources */,
+				12ADA2C22CE4F8BC003696E6 /* Sweater Weather.mp3 in Resources */,
+				12ADA2C42CE4F8CB003696E6 /* Chihiro.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,12 +208,19 @@
 			files = (
 				124D631F2CE25715002046DF /* FilmsViewController.swift in Sources */,
 				124D63182CE2556A002046DF /* TabViewController.swift in Sources */,
+				12ADA2BB2CE4EAD9003696E6 /* DetailFilmVC.swift in Sources */,
 				124D63222CE25C5B002046DF /* Book.swift in Sources */,
 				124D631D2CE25704002046DF /* MusicViewController.swift in Sources */,
 				124D63262CE25D41002046DF /* BooksCell.swift in Sources */,
 				124D631B2CE256E3002046DF /* BooksViewController.swift in Sources */,
+				127C3F552CE315BF00BBB521 /* DetailBookVC.swift in Sources */,
+				127C3F592CE31AF700BBB521 /* Music.swift in Sources */,
+				12ADA2BF2CE4F851003696E6 /* DetailMusicVC.swift in Sources */,
+				12ADA2BD2CE4ECD7003696E6 /* MusicCell.swift in Sources */,
 				124D63032CE2517B002046DF /* AppDelegate.swift in Sources */,
+				127C3F5B2CE3650300BBB521 /* FilmCell.swift in Sources */,
 				124D63052CE2517B002046DF /* SceneDelegate.swift in Sources */,
+				127C3F572CE31AEB00BBB521 /* Film.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

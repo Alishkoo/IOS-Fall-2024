@@ -9,6 +9,7 @@ import UIKit
 
 class BooksViewController: UIViewController {
 
+    
     var tableView = UITableView()
     var books: [Book] = []
     
@@ -64,13 +65,21 @@ extension BooksViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell") as! BookCell
         let book = books[indexPath.row]
         
-        //cell.delegate = self
+        //назначаем кто именно делегат, в самом коде bookcell
+        cell.delegate = self
         cell.book = book
         
         return cell
     }
     
     //TODO: realease didselectedat
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedBook = books[indexPath.row]
+        
+        let detailBookVC = DetailBookVC(book: selectedBook)
+        navigationController?.pushViewController(detailBookVC, animated: true)
+    }
     
 }
 
@@ -94,12 +103,13 @@ extension BooksViewController{
 }
 
 
-//extension BookListVC: BookCellDelegate {
-//    func didChangeFavouriteStatus(for book: Book) {
-//        if let index = books.firstIndex(where: { $0.title == book.title }) {
-//            books[index].favourite.toggle()
-//            tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
-//        }
-//    }
-//}
+extension BooksViewController: BookCellDelegate {
+    func didChangeFavouriteStatus(for book: Book) {
+        if let index = books.firstIndex(where: { $0.title == book.title }) {
+            books[index].favourite.toggle()
+            //обновляет именно ту ячейку где мы нажали на Favbutton
+            tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+        }
+    }
+}
 

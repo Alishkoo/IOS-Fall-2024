@@ -7,9 +7,15 @@
 
 import UIKit
 
+//Паттерн делегат для того чтобы было легче обрабатывать кнопку
+protocol BookCellDelegate: AnyObject{
+    func didChangeFavouriteStatus(for book: Book)
+}
+
+
 class BookCell: UITableViewCell {
     
-    
+    weak var delegate: BookCellDelegate?
     var bookImageView = UIImageView()
     var bookTitleLabel = UILabel()
     var bookAuthorLabel = UILabel()
@@ -49,6 +55,14 @@ class BookCell: UITableViewCell {
         
     }
     
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if bookFavouriteButton.frame.contains(point){
+            return bookFavouriteButton
+        }
+        
+        return super.hitTest(point, with: event)
+    }
+    
     
     private func setupViews(){
         addSubview(bookImageView)
@@ -73,29 +87,29 @@ class BookCell: UITableViewCell {
     
     
     ///Configuration methods
-    func configureImageView(){
+    private func configureImageView(){
         bookImageView.layer.cornerRadius = 10
         bookImageView.clipsToBounds = true // режет фото, то что выходит за рамки
     }
     
-    func configureTitleLabel(){
+    private func configureTitleLabel(){
         bookTitleLabel.numberOfLines = 0
         bookTitleLabel.adjustsFontSizeToFitWidth = true // меняет размер так чтобы влезть в любой rectangle
     }
     
-    func configureAuthorLabel(){
+    private func configureAuthorLabel(){
         bookAuthorLabel.numberOfLines = 0
         bookAuthorLabel.textColor = .darkGray
         bookAuthorLabel.font = UIFont.systemFont(ofSize: 14)
     }
     
-    func configureGenreLabel(){
+    private func configureGenreLabel(){
         bookGenreLabel.numberOfLines = 0
         bookGenreLabel.textColor = .lightGray
         bookGenreLabel.font = UIFont.systemFont(ofSize: 14)
     }
     
-    func configureFavouriteButton(){
+    private func configureFavouriteButton(){
         bookFavouriteButton.setImage(UIImage(systemName: "heart"), for: .normal)//второй аргумент это состояние кнопки
         bookFavouriteButton.tintColor = .red
         bookFavouriteButton.addTarget(self, action: #selector(favouriteButtonTapped), for: .touchUpInside)
@@ -108,6 +122,9 @@ class BookCell: UITableViewCell {
         book.favourite.toggle()
         
         updateFavouriteButton()
+        
+        //Говорим делегату о том что состояние книги изменилось(обновляем tableview чтобы состояние менялось)
+        delegate?.didChangeFavouriteStatus(for: book)
     }
     
     func updateFavouriteButton(){
@@ -120,7 +137,7 @@ class BookCell: UITableViewCell {
     
     
     ///Setup methods
-    func setImageConstraints(){
+    private func setImageConstraints(){
         bookImageView.translatesAutoresizingMaskIntoConstraints = false
         bookImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         bookImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
@@ -128,14 +145,14 @@ class BookCell: UITableViewCell {
         bookImageView.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 179/281).isActive = true
     }
     
-    func setTitleConstraints(){
+    private func setTitleConstraints(){
         bookTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         bookTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         bookTitleLabel.leadingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: 20).isActive = true
         bookTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
     }
     
-    func setAuthorConstraints(){
+    private func setAuthorConstraints(){
         bookAuthorLabel.translatesAutoresizingMaskIntoConstraints = false
         bookAuthorLabel.topAnchor.constraint(equalTo: bookTitleLabel.bottomAnchor, constant: 5).isActive = true
         bookAuthorLabel.leadingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: 20).isActive = true
@@ -143,7 +160,7 @@ class BookCell: UITableViewCell {
         
     }
     
-    func setGenreConstraints(){
+    private func setGenreConstraints(){
         bookGenreLabel.translatesAutoresizingMaskIntoConstraints = false
         bookGenreLabel.topAnchor.constraint(equalTo: bookAuthorLabel.bottomAnchor, constant: 5).isActive = true
         bookGenreLabel.leadingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: 20).isActive = true
@@ -151,7 +168,7 @@ class BookCell: UITableViewCell {
         bookGenreLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
     }
     
-    func setFavouriteButtonConstraints(){
+    private func setFavouriteButtonConstraints(){
         bookFavouriteButton.translatesAutoresizingMaskIntoConstraints = false
         bookFavouriteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
         bookFavouriteButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
